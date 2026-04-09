@@ -1,16 +1,30 @@
 import express from "express";
-import { mockPrices } from "../data/mockData.js";
+import pool from "../db.js";
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.json({ success: true, data: mockPrices });
+router.get("/", async (req, res) => {
+  try {
+    const result = await pool.query(
+      "SELECT id, crop, emoji, market_price AS \"marketPrice\", our_price AS \"ourPrice\", unit, change, last_updated AS \"lastUpdated\" FROM prices"
+    );
+    res.json({ success: true, data: result.rows });
+  } catch (err) {
+    res.status(500).json({ success: false, message: "Database error" });
+  }
 });
 
-router.get("/:id", (req, res) => {
-  const price = mockPrices.find((p) => p.id === parseInt(req.params.id));
-  if (!price) return res.status(404).json({ success: false, message: "Not found" });
-  res.json({ success: true, data: price });
+router.get("/:id", async (req, res) => {
+  try {
+    const result = await pool.query(
+      "SELECT id, crop, emoji, market_price AS \"marketPrice\", our_price AS \"ourPrice\", unit, change, last_updated AS \"lastUpdated\" FROM prices WHERE id = $1",
+      [req.params.id]
+    );
+    if (result.rows.length === 0) return res.status(404).json({ success: false, message: "Not found" });
+    res.json({ success: true, data: result.rows[0] });
+  } catch (err) {
+    res.status(500).json({ success: false, message: "Database error" });
+  }
 });
 
 export default router;

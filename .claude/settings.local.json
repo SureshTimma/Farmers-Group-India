@@ -3,7 +3,15 @@
     "allow": [
       "WebFetch(domain:mcp.render.com)",
       "mcp__render__list_workspaces",
-      "Bash(gh auth:*)"
+      "Bash(gh auth:*)",
+      "Bash(gh repo:*)",
+      "mcp__render__create_web_service",
+      "mcp__render__create_static_site",
+      "mcp__render__update_environment_variables",
+      "mcp__render__get_deploy",
+      "mcp__render__create_postgres",
+      "mcp__render__get_postgres",
+      "mcp__render__update_web_service"
     ]
   }
 }

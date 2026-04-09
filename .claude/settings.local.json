@@ -11,7 +11,11 @@
       "mcp__render__get_deploy",
       "mcp__render__create_postgres",
       "mcp__render__get_postgres",
-      "mcp__render__update_web_service"
+      "mcp__render__update_web_service",
+      "mcp__render__list_deploys",
+      "mcp__render__query_render_postgres",
+      "Bash(curl:*)",
+      "WebFetch(domain:farmers-group-india.onrender.com)"
     ]
   }
 }

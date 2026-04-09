@@ -70,8 +70,8 @@ export default function TrackOrder() {
             </div>
 
             <div className={styles.dates}>
-              <span>📅 Ordered: {order.orderedOn}</span>
-              <span>🎯 Expected: {order.expectedDate}</span>
+              <span>📅 Ordered: {new Date(order.orderedOn).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}</span>
+              <span>🎯 Expected: {new Date(order.expectedDate).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}</span>
             </div>
 
             {/* PROGRESS STEPS */}

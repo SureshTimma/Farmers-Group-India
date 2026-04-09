@@ -24,6 +24,22 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+      <a
+        href="https://wa.me/919999999999?text=Hi%2C%20I%20am%20interested%20in%20your%20products"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          position: "fixed", bottom: 24, right: 24, width: 56, height: 56,
+          background: "#25D366", borderRadius: "50%", display: "flex",
+          alignItems: "center", justifyContent: "center", boxShadow: "0 4px 16px rgba(0,0,0,0.2)",
+          zIndex: 1000, fontSize: 28, textDecoration: "none", transition: "transform 0.2s",
+        }}
+        title="Chat with us on WhatsApp"
+        onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.1)"}
+        onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}
+      >
+        💬
+      </a>
     </div>
   );
 }

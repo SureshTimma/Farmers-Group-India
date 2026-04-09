@@ -71,8 +71,8 @@ export default function Prices() {
             {/* CHANGE INDICATOR */}
             <div className={styles.changeRow}>
               <span className={styles.liveLabel}><span className="live-dot" style={{width:8,height:8,background:'#22c55e',borderRadius:'50%',display:'inline-block',marginRight:6}} />Price last updated today</span>
-              <span className={price.change >= 0 ? styles.up : styles.down}>
-                {price.change >= 0 ? "▲" : "▼"} Market moved {Math.abs(price.change)}% today
+              <span className={parseFloat(price.change) >= 0 ? styles.up : styles.down}>
+                {parseFloat(price.change) >= 0 ? "▲" : "▼"} Market moved {Math.abs(parseFloat(price.change))}% today
               </span>
             </div>
           </>

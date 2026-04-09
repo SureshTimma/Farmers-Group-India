@@ -12,7 +12,7 @@ export default function Ticker() {
       .catch(() => {});
   }, []);
 
-  const isUp = price.change >= 0;
+  const isUp = parseFloat(price.change) >= 0;
 
   return (
     <div className={styles.ticker}>
@@ -26,7 +26,7 @@ export default function Ticker() {
         <span className={styles.ourPrice}>Our Price: ₹{price.ourPrice}/q</span>
         &nbsp;
         <span className={isUp ? styles.up : styles.down}>
-          {isUp ? "▲" : "▼"} {Math.abs(price.change)}%
+          {isUp ? "▲" : "▼"} {Math.abs(parseFloat(price.change))}%
         </span>
       </span>
       <span className={styles.save}>

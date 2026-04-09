@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { API_BASE } from "../config.js";
+import { PRODUCT_IMAGES } from "../images.js";
 import styles from "./Products.module.css";
 
 const CATEGORIES = [
@@ -68,7 +69,13 @@ export default function Products() {
         <div className={styles.grid}>
           {filtered.map((p) => (
             <div key={p.id} className={styles.card}>
-              <div className={styles.cardImg}>{p.emoji}</div>
+              <div className={styles.cardImg}>
+                {PRODUCT_IMAGES[p.name] ? (
+                  <img src={PRODUCT_IMAGES[p.name]} alt={p.name} className={styles.cardImage} />
+                ) : (
+                  <span>{p.emoji}</span>
+                )}
+              </div>
               <div className={styles.cardBody}>
                 <div className={styles.catTag}>{p.category}</div>
                 <div className={styles.productName}>{p.name}</div>

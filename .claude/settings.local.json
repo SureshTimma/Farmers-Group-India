@@ -15,7 +15,8 @@
       "mcp__render__list_deploys",
       "mcp__render__query_render_postgres",
       "Bash(curl:*)",
-      "WebFetch(domain:farmers-group-india.onrender.com)"
+      "WebFetch(domain:farmers-group-india.onrender.com)",
+      "mcp__render__update_static_site"
     ]
   }
 }

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { API_BASE } from "../config.js";
+import { SEED_IMAGES } from "../images.js";
 import styles from "./Seeds.module.css";
 
 export default function Seeds() {
@@ -34,7 +35,13 @@ export default function Seeds() {
                 onClick={() => setExpanded(isOpen ? null : seed.id)}
               >
                 <div className={styles.cardTop}>
-                  <div className={styles.iconWrap}>{seed.emoji}</div>
+                  <div className={styles.iconWrap}>
+                    {SEED_IMAGES[seed.name] ? (
+                      <img src={SEED_IMAGES[seed.name]} alt={seed.name} className={styles.seedImg} />
+                    ) : (
+                      seed.emoji
+                    )}
+                  </div>
                   <div className={styles.cardInfo}>
                     <div className={styles.seedName}>{seed.name}</div>
                     <div className={styles.seedDesc}>{seed.description}</div>

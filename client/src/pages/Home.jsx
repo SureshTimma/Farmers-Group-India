@@ -93,6 +93,30 @@ export default function Home() {
         </div>
       </section>
 
+      {/* OUR JOURNEY */}
+      <section className={styles.journeySection}>
+        <div className={styles.sectionHeader}>
+          <h2 className={styles.sectionTitle}>Our Journey — From Soil to Supply Chain</h2>
+          <p className={styles.sectionSub}>Every step of our process ensures the best quality reaches you</p>
+        </div>
+        <div className={styles.journeyGrid}>
+          {[
+            { img: "https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=500&q=80", title: "Cultivate", desc: "Our 250+ farmers grow groundnuts across 14 Indian states using sustainable farming practices." },
+            { img: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=500&q=80", title: "Harvest", desc: "Hand-picked at peak maturity to ensure maximum flavor, nutrition, and oil content." },
+            { img: "https://images.unsplash.com/photo-1590165482129-1b8b27698780?w=500&q=80", title: "Process & Pack", desc: "Cleaned, graded, and packed in our facilities with strict quality checks at every step." },
+            { img: "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=500&q=80", title: "Deliver Globally", desc: "From our farms in India to your doorstep — fast, tracked, and guaranteed fresh." },
+          ].map((j) => (
+            <div key={j.title} className={styles.journeyCard}>
+              <img src={j.img} alt={j.title} className={styles.journeyImg} />
+              <div className={styles.journeyBody}>
+                <h3 className={styles.journeyTitle}>{j.title}</h3>
+                <p className={styles.journeyDesc}>{j.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* QUICK LINKS */}
       <section className={styles.quickLinks}>
         {[

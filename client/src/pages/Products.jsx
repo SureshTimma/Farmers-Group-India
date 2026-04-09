@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { API_BASE } from "../config.js";
-import { PRODUCT_IMAGES } from "../images.js";
-import { LuShoppingCart, LuSprout, LuFlaskConical, LuWrench, LuPlus } from "react-icons/lu";
 import styles from "./Products.module.css";
 
 const CATEGORIES = [
   { key: "all", label: "All Products" },
-  { key: "seed", label: "Seeds", icon: <LuSprout size={14} /> },
-  { key: "fertilizer", label: "Fertilizers", icon: <LuFlaskConical size={14} /> },
-  { key: "tool", label: "Tools", icon: <LuWrench size={14} /> },
+  { key: "seed", label: "🌱 Seeds" },
+  { key: "fertilizer", label: "🧪 Fertilizers" },
+  { key: "tool", label: "🔧 Tools" },
 ];
 
 export default function Products() {
@@ -19,7 +16,7 @@ export default function Products() {
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    fetch(`${API_BASE}/api/products`)
+    fetch("/api/products")
       .then((r) => r.json())
       .then((d) => { setProducts(d.data || []); setFiltered(d.data || []); setLoading(false); })
       .catch(() => setLoading(false));
@@ -45,11 +42,11 @@ export default function Products() {
       <div className={styles.container}>
         <div className={styles.topRow}>
           <div>
-            <h1 className={styles.title}><LuShoppingCart size={26} style={{ marginRight: 8, verticalAlign: "middle" }} /> Our Products</h1>
-            <p className={styles.sub}>Quality seeds, fertilizers & tools &mdash; direct from our 250+ farmer community</p>
+            <h1 className={styles.title}>🛒 Our Products</h1>
+            <p className={styles.sub}>Quality seeds, fertilizers & tools — direct from our 250+ farmer community</p>
           </div>
           {cartCount > 0 && (
-            <div className={styles.cartBadge}><LuShoppingCart size={15} style={{ marginRight: 6 }} /> Cart: {cartCount} item{cartCount > 1 ? "s" : ""}</div>
+            <div className={styles.cartBadge}>🛒 Cart: {cartCount} item{cartCount > 1 ? "s" : ""}</div>
           )}
         </div>
 
@@ -60,7 +57,7 @@ export default function Products() {
               className={`${styles.filterBtn} ${category === c.key ? styles.active : ""}`}
               onClick={() => handleFilter(c.key)}
             >
-              {c.icon} {c.label}
+              {c.label}
             </button>
           ))}
         </div>
@@ -70,19 +67,13 @@ export default function Products() {
         <div className={styles.grid}>
           {filtered.map((p) => (
             <div key={p.id} className={styles.card}>
-              <div className={styles.cardImg}>
-                {PRODUCT_IMAGES[p.name] ? (
-                  <img src={PRODUCT_IMAGES[p.name]} alt={p.name} className={styles.cardImage} />
-                ) : (
-                  <span>{p.emoji}</span>
-                )}
-              </div>
+              <div className={styles.cardImg}>{p.emoji}</div>
               <div className={styles.cardBody}>
                 <div className={styles.catTag}>{p.category}</div>
                 <div className={styles.productName}>{p.name}</div>
                 <div className={styles.productDesc}>{p.description}</div>
                 <div className={styles.priceRow}>
-                  <span className={styles.price}>&#8377;{p.price}/{p.unit}</span>
+                  <span className={styles.price}>₹{p.price}/{p.unit}</span>
                   <span className={p.inStock ? styles.inStock : styles.outStock}>
                     {p.inStock ? "In Stock" : "Out of Stock"}
                   </span>
@@ -92,7 +83,7 @@ export default function Products() {
                   onClick={() => addToCart(p)}
                   disabled={!p.inStock}
                 >
-                  <LuPlus size={14} style={{ marginRight: 4 }} /> Add to Cart
+                  + Add to Cart
                 </button>
               </div>
             </div>

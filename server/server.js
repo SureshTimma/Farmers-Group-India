@@ -1,7 +1,8 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import pool from "./db.js";
+import path from "path";
+import { fileURLToPath } from "url";
 import pricesRouter from "./routes/prices.js";
 import ordersRouter from "./routes/orders.js";
 import productsRouter from "./routes/products.js";
@@ -9,41 +10,27 @@ import seedsRouter from "./routes/seeds.js";
 
 dotenv.config();
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors({
-  origin: process.env.CORS_ORIGIN ? process.env.CORS_ORIGIN.split(",") : "*",
-}));
+app.use(cors());
 app.use(express.json());
-
-app.get("/", (req, res) => {
-  res.json({ message: "Framers Group of India API is running 🌾" });
-});
 
 app.use("/api/prices", pricesRouter);
 app.use("/api/orders", ordersRouter);
 app.use("/api/products", productsRouter);
 app.use("/api/seeds", seedsRouter);
 
-async function initDB() {
-  try {
-    const check = await pool.query("SELECT to_regclass('public.prices') AS exists");
-    if (check.rows[0].exists) {
-      console.log("Tables already exist, skipping seed.");
-      return;
-    }
-    console.log("First run — seeding database...");
-    const { default: seed } = await import("./seed-fn.js");
-    await seed(pool);
-    console.log("Database seeded!");
-  } catch (err) {
-    console.error("DB init error:", err.message);
-  }
-}
+// Serve React frontend in production
+const clientDist = path.join(__dirname, "../client/dist");
+app.use(express.static(clientDist));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(clientDist, "index.html"));
+});
 
-initDB().then(() => {
-  app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-  });
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
 });

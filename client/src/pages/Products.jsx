@@ -16,7 +16,7 @@ export default function Products() {
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    fetch("/api/products")
+    fetch(`${import.meta.env.VITE_API_URL || ""}/api/products`)
       .then((r) => r.json())
       .then((d) => { setProducts(d.data || []); setFiltered(d.data || []); setLoading(false); })
       .catch(() => setLoading(false));

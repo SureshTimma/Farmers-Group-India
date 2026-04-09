@@ -16,7 +16,7 @@ export default function TrackOrder() {
     setError("");
     setOrder(null);
     try {
-      const res = await fetch(`/api/orders/${orderId.trim()}`);
+      const res = await fetch(`${import.meta.env.VITE_API_URL || ""}/api/orders/${orderId.trim()}`);
       const data = await res.json();
       if (!data.success) { setError(data.message || "Order not found"); }
       else { setOrder(data.data); }

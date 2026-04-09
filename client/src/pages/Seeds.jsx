@@ -7,7 +7,7 @@ export default function Seeds() {
   const [expanded, setExpanded] = useState(null);
 
   useEffect(() => {
-    fetch("/api/seeds")
+    fetch(`${import.meta.env.VITE_API_URL || ""}/api/seeds`)
       .then((r) => r.json())
       .then((d) => { setSeeds(d.data || []); setLoading(false); })
       .catch(() => setLoading(false));

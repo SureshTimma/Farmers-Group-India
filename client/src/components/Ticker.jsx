@@ -4,8 +4,10 @@ import styles from "./Ticker.module.css";
 export default function Ticker() {
   const [price, setPrice] = useState({ marketPrice: 5800, ourPrice: 5500, change: +1.2 });
 
+  const API_BASE = import.meta.env.VITE_API_URL || "";
+
   useEffect(() => {
-    fetch("/api/prices")
+    fetch(`${API_BASE}/api/prices`)
       .then((r) => r.json())
       .then((d) => d.data?.[0] && setPrice(d.data[0]))
       .catch(() => {});

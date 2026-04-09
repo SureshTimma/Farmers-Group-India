@@ -6,7 +6,7 @@ export default function Prices() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/prices")
+    fetch(`${import.meta.env.VITE_API_URL || ""}/api/prices`)
       .then((r) => r.json())
       .then((d) => { setPrice(d.data?.[0]); setLoading(false); })
       .catch(() => setLoading(false));

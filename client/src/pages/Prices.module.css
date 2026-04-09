@@ -1,0 +1,86 @@
+.page { background: #f4f8ef; min-height: 80vh; padding: 2.5rem 0; }
+.container { max-width: 700px; margin: 0 auto; padding: 0 1.25rem; }
+.header { text-align: center; margin-bottom: 2rem; }
+.title { font-family: "Baloo 2", sans-serif; font-size: 1.8rem; font-weight: 700; color: #1a2e0f; }
+.sub { color: #5a7a4a; font-size: 14px; margin-top: 6px; }
+
+.saveBanner {
+  background: #eaf3de;
+  border: 1.5px solid #b8d99a;
+  border-radius: 12px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #1e5c10;
+  margin-bottom: 1.5rem;
+}
+.saveBannerIcon { font-size: 22px; }
+
+.priceGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 1.5rem;
+}
+
+.priceCard {
+  border-radius: 16px;
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  border: 2px solid transparent;
+}
+
+.marketCard {
+  background: #fff;
+  border-color: #d4e8c0;
+}
+
+.ourCard {
+  background: #1e5c10;
+  color: #fff;
+  border-color: #1e5c10;
+}
+
+.cardTag {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  opacity: 0.7;
+}
+
+.cardIcon { font-size: 36px; margin-bottom: 8px; }
+.cardCrop { font-family: "Baloo 2", sans-serif; font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+.cardPrice { font-family: "Baloo 2", sans-serif; font-size: 2.4rem; font-weight: 700; line-height: 1.1; }
+.cardUnit { font-size: 12px; opacity: 0.6; margin-top: 2px; }
+.cardNote { font-size: 12px; margin-top: 10px; font-weight: 500; opacity: 0.8; }
+
+.infoBox {
+  background: #fff8e1;
+  border: 1px solid #f0d080;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+}
+.infoBox h3 { font-family: "Baloo 2", sans-serif; font-size: 15px; color: #7a5c00; margin-bottom: 8px; }
+.infoBox p { font-size: 13px; color: #5a4a20; line-height: 1.8; }
+
+.changeRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #6b7e5a;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.liveLabel { display: flex; align-items: center; }
+.up { color: #1e5c10; font-weight: 600; }
+.down { color: #dc2626; font-weight: 600; }
+
+@media (max-width: 480px) {
+  .priceGrid { grid-template-columns: 1fr; }
+}

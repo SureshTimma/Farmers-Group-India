@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:mcp.render.com)",
+      "mcp__render__list_workspaces",
+      "Bash(gh auth:*)"
+    ]
+  }
+}

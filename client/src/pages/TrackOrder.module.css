@@ -1,0 +1,164 @@
+.page { background: #f4f8ef; min-height: 80vh; padding: 2.5rem 0; }
+.container { max-width: 680px; margin: 0 auto; padding: 0 1.25rem; }
+.header { text-align: center; margin-bottom: 2rem; }
+.title { font-family: "Baloo 2", sans-serif; font-size: 1.8rem; font-weight: 700; color: #1a2e0f; }
+.sub { color: #5a7a4a; font-size: 14px; margin-top: 6px; }
+
+.searchBox {
+  background: #fff;
+  border: 1px solid #d4e8c0;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.label { display: block; font-size: 14px; font-weight: 500; color: #1e5c10; margin-bottom: 8px; }
+
+.inputRow { display: flex; gap: 10px; }
+
+.input {
+  flex: 1;
+  border: 1.5px solid #b8d99a;
+  border-radius: 8px;
+  padding: 11px 14px;
+  font-size: 14px;
+  color: #1a2e0f;
+  background: #f9fcf5;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.input:focus { border-color: #1e5c10; }
+
+.trackBtn {
+  background: #1e5c10;
+  color: #fff;
+  border: none;
+  padding: 11px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  font-family: "Hind", sans-serif;
+  transition: background 0.2s;
+}
+.trackBtn:hover:not(:disabled) { background: #164509; }
+.trackBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.error { background: #fee2e2; color: #dc2626; padding: 10px 14px; border-radius: 8px; font-size: 13px; margin-top: 10px; }
+.hint { font-size: 12px; color: #8a9a7a; margin-top: 10px; }
+
+.result {
+  background: #fff;
+  border: 1px solid #d4e8c0;
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.resultHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.orderId { font-size: 12px; color: #8a9a7a; margin-bottom: 4px; }
+.productName { font-family: "Baloo 2", sans-serif; font-size: 17px; font-weight: 600; color: #1a2e0f; }
+.customer { font-size: 13px; color: #5a7a4a; margin-top: 3px; }
+
+.statusBadge {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.statusBadge[data-status="delivered"] { background: #eaf3de; color: #1e5c10; }
+.statusBadge[data-status="shipped"] { background: #e0f0ff; color: #1560a8; }
+.statusBadge[data-status="packed"] { background: #fff8e1; color: #8a6000; }
+.statusBadge[data-status="placed"] { background: #f0f0f0; color: #555; }
+
+.dates {
+  display: flex;
+  gap: 1rem;
+  font-size: 12px;
+  color: #6b7e5a;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.stepsWrap {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.25rem;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 70px;
+}
+
+.stepDot {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e8f0e0;
+  border: 2px solid #c0d8a0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  color: #8a9a7a;
+  margin-bottom: 6px;
+}
+
+.step.done .stepDot {
+  background: #1e5c10;
+  border-color: #1e5c10;
+  color: #fff;
+  font-size: 14px;
+}
+
+.step.active .stepDot {
+  background: #fff;
+  border: 2.5px solid #1e5c10;
+  color: #1e5c10;
+  font-size: 17px;
+  box-shadow: 0 0 0 4px #c8e8a8;
+}
+
+.stepLabel {
+  font-size: 11px;
+  text-align: center;
+  color: #8a9a7a;
+  line-height: 1.3;
+}
+
+.step.done .stepLabel,
+.step.active .stepLabel {
+  color: #1e5c10;
+  font-weight: 600;
+}
+
+.connector {
+  flex: 1;
+  height: 2px;
+  background: #d4e8c0;
+  margin-top: 17px;
+}
+
+.connector.connDone {
+  background: #1e5c10;
+}
+
+.locationBox {
+  background: #eaf3de;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 13px;
+  color: #2a5018;
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { LuShieldCheck, LuUsers, LuBadgeIndianRupee, LuPackage, LuSprout, LuTruck, LuPhone, LuBarChart3, LuPackageSearch, LuShoppingCart } from "react-icons/lu";
+import { LuShieldCheck, LuUsers, LuBadgeIndianRupee, LuPackage, LuSprout, LuTruck, LuPhone, LuChartBar, LuPackageSearch, LuShoppingCart } from "react-icons/lu";
 import styles from "./Home.module.css";
 
 const stats = [
@@ -37,7 +37,7 @@ export default function Home() {
               Explore Our Products &rarr;
             </button>
             <button className={styles.btnOutline} onClick={() => navigate("/prices")}>
-              <LuBarChart3 size={16} style={{ marginRight: 6 }} /> See Live Prices
+              <LuChartBar size={16} style={{ marginRight: 6 }} /> See Live Prices
             </button>
           </div>
         </div>
@@ -121,7 +121,7 @@ export default function Home() {
       {/* QUICK LINKS */}
       <section className={styles.quickLinks}>
         {[
-          { icon: <LuBarChart3 size={30} />, label: "See Groundnut\nMarket Price", path: "/prices", color: "#eaf3de" },
+          { icon: <LuChartBar size={30} />, label: "See Groundnut\nMarket Price", path: "/prices", color: "#eaf3de" },
           { icon: <LuPackageSearch size={30} />, label: "Track My\nOrder", path: "/track-order", color: "#fff8e1" },
           { icon: <LuShoppingCart size={30} />, label: "Browse\nProducts", path: "/products", color: "#e8f4fd" },
           { icon: <LuSprout size={30} />, label: "Seeds &\nIndustries", path: "/seeds", color: "#fce8e8" },

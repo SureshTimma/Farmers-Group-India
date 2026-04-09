@@ -16,7 +16,12 @@
       "mcp__render__query_render_postgres",
       "Bash(curl:*)",
       "WebFetch(domain:farmers-group-india.onrender.com)",
-      "mcp__render__update_static_site"
+      "mcp__render__update_static_site",
+      "mcp__render__list_logs",
+      "mcp__render__select_workspace",
+      "Bash(node -e \"const lu = require\\('react-icons/lu'\\); const names = Object.keys\\(lu\\).filter\\(k => /home|wheat|menu|search|sprout|cart|truck|package|phone|mail|map|bar|store|book|trend|shield|user|check|wrench|flask|plus|factory|chevron|calendar|message|badge|x$/i.test\\(k\\)\\).sort\\(\\); console.log\\(names.join\\('\\\\n'\\)\\)\")",
+      "Bash(node -e \"const lu = require\\('react-icons/lu'\\); const names = Object.keys\\(lu\\).sort\\(\\); const needed = ['Home','Wheat','Menu','X','Sprout','Search','ShoppingCart','Truck','Package','Phone','Mail','MapPin','Store','BookOpen','TrendingUp','TrendingDown','ShieldCheck','Users','Check','Wrench','Plus','Factory','ChevronUp','ChevronDown','Calendar','MessageCircle','BarChart','PackageSearch','ClipboardList','FlaskConical','Crosshair','User','BadgeIndianRupee']; needed.forEach\\(n => { const found = names.find\\(k => k.toLowerCase\\(\\).includes\\(n.toLowerCase\\(\\)\\)\\); const exact = names.includes\\('Lu'+n\\); console.log\\(n + ': exact=' + exact + ' | closest=' + \\(found||'NONE'\\)\\); }\\);\")",
+      "Bash(node -e \"const lu = require\\('react-icons/lu'\\); const names = Object.keys\\(lu\\).sort\\(\\); console.log\\('Home-like:', names.filter\\(n => /house/i.test\\(n\\)\\).join\\(', '\\)\\); console.log\\('Chart-like:', names.filter\\(n => /chart.*bar|bar.*chart/i.test\\(n\\)\\).join\\(', '\\)\\);\")"
     ]
   }
 }

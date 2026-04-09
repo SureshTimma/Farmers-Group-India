@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { API_BASE } from "../config.js";
-import { LuBarChart3, LuStore, LuBadgeIndianRupee, LuTrendingUp, LuTrendingDown, LuBookOpen } from "react-icons/lu";
+import { LuChartBar, LuStore, LuBadgeIndianRupee, LuTrendingUp, LuTrendingDown, LuBookOpen } from "react-icons/lu";
 import styles from "./Prices.module.css";
 
 export default function Prices() {
@@ -21,7 +21,7 @@ export default function Prices() {
     <div className={styles.page}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <h1 className={styles.title}><LuBarChart3 size={26} style={{ marginRight: 8, verticalAlign: "middle" }} /> Live Groundnut Prices</h1>
+          <h1 className={styles.title}><LuChartBar size={26} style={{ marginRight: 8, verticalAlign: "middle" }} /> Live Groundnut Prices</h1>
           <p className={styles.sub}>We always keep our price lower than the market. You save money every time!</p>
         </div>
 

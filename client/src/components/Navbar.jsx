@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { LuWheat, LuHome, LuBarChart3, LuShoppingCart, LuSprout, LuPackageSearch, LuMenu, LuX } from "react-icons/lu";
+import { LuWheat, LuHouse, LuChartBar, LuShoppingCart, LuSprout, LuPackageSearch, LuMenu, LuX } from "react-icons/lu";
 import styles from "./Navbar.module.css";
 
 const links = [
-  { to: "/", label: "Home", icon: <LuHome size={16} /> },
-  { to: "/prices", label: "Prices", icon: <LuBarChart3 size={16} /> },
+  { to: "/", label: "Home", icon: <LuHouse size={16} /> },
+  { to: "/prices", label: "Prices", icon: <LuChartBar size={16} /> },
   { to: "/products", label: "Products", icon: <LuShoppingCart size={16} /> },
   { to: "/seeds", label: "Seeds", icon: <LuSprout size={16} /> },
   { to: "/track-order", label: "Track Order", icon: <LuPackageSearch size={16} /> },

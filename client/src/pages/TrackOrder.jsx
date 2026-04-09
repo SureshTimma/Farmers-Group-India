@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { API_BASE } from "../config.js";
-import { LuPackageSearch, LuSearch, LuClipboardList, LuPackage, LuTruck, LuHome, LuMapPin, LuCalendar, LuCrosshair, LuUser, LuCheck } from "react-icons/lu";
+import { LuPackageSearch, LuSearch, LuClipboardList, LuPackage, LuTruck, LuHouse, LuMapPin, LuCalendar, LuCrosshair, LuUser, LuCheck } from "react-icons/lu";
 import styles from "./TrackOrder.module.css";
 
 const STEPS = ["Order Placed", "Packed & Ready", "On the Way", "Delivered"];
-const STEP_ICONS = [<LuClipboardList size={16} />, <LuPackage size={16} />, <LuTruck size={16} />, <LuHome size={16} />];
+const STEP_ICONS = [<LuClipboardList size={16} />, <LuPackage size={16} />, <LuTruck size={16} />, <LuHouse size={16} />];
 
 export default function TrackOrder() {
   const [orderId, setOrderId] = useState("");

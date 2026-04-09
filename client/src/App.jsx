@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import { LuMessageCircle } from "react-icons/lu";
 import Navbar from "./components/Navbar.jsx";
 import Ticker from "./components/Ticker.jsx";
 import Footer from "./components/Footer.jsx";
@@ -32,13 +33,13 @@ export default function App() {
           position: "fixed", bottom: 24, right: 24, width: 56, height: 56,
           background: "#25D366", borderRadius: "50%", display: "flex",
           alignItems: "center", justifyContent: "center", boxShadow: "0 4px 16px rgba(0,0,0,0.2)",
-          zIndex: 1000, fontSize: 28, textDecoration: "none", transition: "transform 0.2s",
+          zIndex: 1000, textDecoration: "none", transition: "transform 0.2s", color: "#fff",
         }}
         title="Chat with us on WhatsApp"
         onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.1)"}
         onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}
       >
-        💬
+        <LuMessageCircle size={28} />
       </a>
     </div>
   );
